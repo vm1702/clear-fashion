@@ -5,7 +5,7 @@
 let currentProducts = [];
 let currentPagination = {};
 
-// inititiqte selectors
+// instantiate the selectors
 const selectShow = document.querySelector('#show-select');
 const selectPage = document.querySelector('#page-select');
 const sectionProducts = document.querySelector('#products');
