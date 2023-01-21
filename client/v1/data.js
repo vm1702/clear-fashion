@@ -3,1087 +3,605 @@
 
 const marketplace = [
   {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/vestes/4256-sorbonne-laine-laminee-1300000263740.html#/79-taille_fastmag-m',
-    'price': 299,
-    'name': 'Sorbonne Laine laminée Caramel',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'loom',
-    'link':
-      'https://www.loom.fr/collections/tous-les-vetements/products/le-t-shirt',
-    'price': 20,
-    'name': 'Le t-shirt',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/hauts/3973-pull-vincennes-1300000257381.html#/79-taille_fastmag-m',
-    'price': 79,
-    'name': 'Pull Vincennes',
-    'date': '2020-02-25'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/chemises/4214-chemise-odeon-recytech-1300000264709.html#/79-taille_fastmag-m',
-    'price': 99,
-    'name': 'Chemise Odéon recytech',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'loom',
-    'link':
-      'https://www.loom.fr/collections/tous-les-vetements/products/la-ceinture',
-    'price': 55,
-    'name': 'La ceinture',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/hauts/3972-pull-vincennes-1300000257442.html#/79-taille_fastmag-m',
-    'price': 79,
-    'name': 'Pull Vincennes',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/chemises/4216-chemise-odeon-recytech-1300000264587.html#/79-taille_fastmag-m',
-    'price': 99,
-    'name': 'Chemise Odeon recytech',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'loom',
-    'link':
-      'https://www.loom.fr/collections/tous-les-vetements/products/la-chemise-vichy',
-    'price': 50,
-    'name': 'La chemise vichy',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/chemises/4222-chemise-charonne-1300000265164.html#/79-taille_fastmag-m',
-    'price': 89,
-    'name': 'Chemise Charonne flanelle marine',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'loom',
-    'link':
-      'https://www.loom.fr/collections/tous-les-vetements/products/le-pull-leger-en-coton',
-    'price': 65,
-    'name': 'Le pull léger en coton',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/pulls-sweatshirts/4237-saint-victor-merinos-1300000262323.html#/79-taille_fastmag-m',
-    'price': 110,
-    'name': 'Pull Saint-Victor Caramel 100% mérinos',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': 'aatise',
-    'link':
-      'https://www.aatise.com/fr/pulls-cardigans-en-stock-homme/291-12688-pull-100-laine-merinos-col-roule-homme-zaulo.html#/1-taille-s/566-couleur-marine',
-    'price': 175,
-    'name': 'Pull 100% Laine Mérinos col roulé homme - Zaulo',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'aatise',
-    'link':
-      'https://www.aatise.com/fr/t-shirt-en-stock-homme/146-1925-polo-zorrie-100-lin-pique-gris-boutons-nacres.html#/5-couleur-gris/26-taille-xs',
-    'price': 83,
-    'name': 'Polo Zorrie 100% lin piqué gris, boutons nacrés',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/vestes/4255-sorbonne-laine-laminee-1300000263801.html#/79-taille_fastmag-m',
-    'price': 299,
-    'name': 'Sorbonne laine laminée vert',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/pulls-sweatshirts/4294-jaures-hokusai-1300000266598.html#/79-taille_fastmag-m',
-    'price': 69,
-    'name': 'Sweatshirt Jaurès Hokusai Bordeaux',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'loom',
-    'link':
-      'https://www.loom.fr/collections/tous-les-vetements/products/le-porte-cartes',
-    'price': 35,
-    'name': 'Le porte-cartes',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': 'loom',
-    'link': 'https://www.loom.fr/collections/tous-les-vetements/products/le-polo',
-    'price': 45,
-    'name': 'Le polo',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'aatise',
-    'link':
-      'https://www.aatise.com/fr/t-shirt-en-stock-homme/126-1415-t-shirt-zumoi-homme-ecru-en-lin.html#/2-taille-m/573-couleur-off_white',
-    'price': 65,
-    'name': 'T-Shirt Zumoi Homme écru en Lin',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/vestes/4243-belleville-laine-laminee-1300000263689.html#/79-taille_fastmag-m',
-    'price': 269,
-    'name': 'Teddy Belleville en laine laminée - Vert',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/chemises/4148-chemise-chaillot-1300000257206.html#/79-taille_fastmag-m',
-    'price': 79,
-    'name': 'Chemise Chaillot rayures',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'aatise',
-    'link':
-      'https://www.aatise.com/fr/t-shirt-en-stock-homme/104-1211-t-shirt-zumoi-100-lin-homme-biodegradable-noir.html#/2-taille-m/11-couleur-noir',
-    'price': 65,
-    'name': 'T-shirt Zumoi 100% lin homme biodégradable noir',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'loom',
-    'link':
-      'https://www.loom.fr/collections/tous-les-vetements/products/les-baskets',
-    'price': 115,
-    'name': 'Les baskets',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': '1083',
-    'link':
-      'https://www.1083.fr/702-veste-jeans-superdenimflex-indigo-brut-1083.html',
-    'price': 179,
-    'name': '702 Veste Jeans SuperDenimFlex...',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': '1083',
-    'link': 'https://www.1083.fr/141-droit-superdenimflex-indigo.html',
-    'price': 119,
-    'name': 'Jean 141 coupe droite indigo',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'aatise',
-    'link':
-      'https://www.aatise.com/fr/pantalons-en-stock-homme/137-1599-pantalon-5-poches-zanzibar-droit-coloris-noir-tencel-et-coton-recycle.html#/11-couleur-noir/592-taille-26',
-    'price': 149,
-    'name':
-      'Pantalon 5 poches Zanzibar droit coloris noir Tencel et coton récyclé',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': '1083',
-    'link':
-      'https://www.1083.fr/841-volontaire-bonnet-bleu-1083-couleur-bleu.html',
-    'price': 35,
-    'name': 'Bonnet 841 Volontaire Bleu',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'loom',
-    'link':
-      'https://www.loom.fr/collections/tous-les-vetements/products/le-pull-col-roule',
-    'price': 75,
-    'name': 'Le pull col roulé',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'loom',
-    'link':
-      'https://www.loom.fr/collections/tous-les-vetements/products/les-chaussettes',
-    'price': 12,
-    'name': 'Les chaussettes',
-    'date': '2020-02-25'
-  },
-  {
-    'brand': '1083',
-    'link': 'https://www.1083.fr/840-bonnet-court-noir-1083.html',
-    'price': 35,
-    'name': 'Bonnet 840 Court Noir',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'loom',
-    'link':
-      'https://www.loom.fr/collections/tous-les-vetements/products/le-bonnet',
-    'price': 30,
-    'name': 'Le bonnet',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/e-shop/4262-t-shirt-villette-1300000261968.html#/79-taille_fastmag-m/751-couleur-gris_bleu_26',
-    'price': 25,
-    'name': 'T-shirt Villette Gris-bleu - GRIS BLEU 26',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/chemises/4193-t-shirt-hokusai-1300000261395.html#/79-taille_fastmag-m',
-    'price': 35,
-    'name': 'T-shirt Hokusai blanc',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/chemises/4218-chemise-solferino-1300000265041.html#/79-taille_fastmag-m',
-    'price': 119,
-    'name': 'Chemise Solferino 100% mérinos',
-    'date': '2020-02-25'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/vestes/4217-manteau-technique-elon-1300000262576.html#/79-taille_fastmag-m',
-    'price': 449,
-    'name': 'Imperméable Elon x SympaTex®',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/chemises/4241-sur-chemise-roquette-1300000265768.html#/79-taille_fastmag-m',
-    'price': 99,
-    'name': 'Sur-chemise Roquette Kaki',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/pulls-sweatshirts/4251-sweatshirt-jaures-1300000262088.html#/79-taille_fastmag-m',
-    'price': 69,
-    'name': 'Sweatshirt Jaurès',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/chemises/4189-t-shirt-hokusai-1300000261630.html#/79-taille_fastmag-m',
-    'price': 35,
-    'name': 'T-shirt Hokusai marine',
-    'date': '2020-02-25'
-  },
-  {
-    'brand': 'aatise',
-    'link':
-      'https://www.aatise.com/fr/pantalons-en-stock-homme/116-1446-pantalon-5-poches-zanzibar-marine-droit-tencel-et-coton-recycle.html#/33-taille-32/566-couleur-marine',
-    'price': 149,
-    'name': 'Pantalon 5 poches Zanzibar marine droit Tencel et coton récyclé',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/chemises/4215-chemise-odeon-recytech-1300000264648.html#/79-taille_fastmag-m',
-    'price': 99,
-    'name': 'Chemise Odéon recytech',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'aatise',
-    'link':
-      'https://www.aatise.com/fr/t-shirt-en-stock-homme/354-15296-top-zumoi-100-lin-imprime-sous-le-short-des-garcons.html#/1-taille-s/573-couleur-off_white',
-    'price': 69,
-    'name': 'Top Zumoi 100% lin Imprimé "Sous le short des garçons"',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'loom',
-    'link':
-      'https://www.loom.fr/collections/tous-les-vetements/products/la-chemise-oxford',
-    'price': 55,
-    'name': 'La chemise oxford',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'loom',
-    'link':
-      'https://www.loom.fr/collections/tous-les-vetements/products/la-chemise-en-flanelle',
-    'price': 60,
-    'name': 'La chemise en flanelle',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'loom',
-    'link':
-      'https://www.loom.fr/collections/tous-les-vetements/products/le-hoodie',
-    'price': 90,
-    'name': 'Le hoodie',
-    'date': '2020-02-25'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/vestes/4244-belleville-laine-laminee-1300000263627.html#/79-taille_fastmag-m',
-    'price': 269,
-    'name': 'Teddy Belleville en laine laminée - Caramel',
-    'date': '2020-02-25'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/chemises/4223-chemise-charonne-1300000264884.html#/79-taille_fastmag-m',
-    'price': 99,
-    'name': 'Chemise Charonne flanelle vert',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/pulls-sweatshirts/4236-saint-victor-merinos-1300000262392.html#/79-taille_fastmag-m',
-    'price': 110,
-    'name': 'Pull Saint-Victor Vert 100% mérinos',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/pulls-sweatshirts/4293-jaures-hokusai-1300000266635.html#/79-taille_fastmag-m',
-    'price': 69,
-    'name': 'Sweatshirt Jaurès Hokusai',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/pulls-sweatshirts/4197-sweatshirt-alesia-1300000259439.html#/79-taille_fastmag-m',
-    'price': 79,
-    'name': 'Sweatshirt Alesia noir',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': 'aatise',
-    'link':
-      'https://www.aatise.com/fr/pantalons-en-stock-homme/135-1614-pantalon-5-poches-zanzibar-droit-tencel-coloris-grik.html#/588-couleur-grik/592-taille-26',
-    'price': 149,
-    'name': 'Pantalon 5 poches Zanzibar droit, Tencel coloris grik',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': '1083',
-    'link': 'https://www.1083.fr/841-bonnet-noir-1083.html',
-    'price': 35,
-    'name': 'Bonnet 841 noir',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'loom',
-    'link':
-      'https://www.loom.fr/collections/tous-les-vetements/products/le-pull-point-de-riz',
-    'price': 100,
-    'name': 'Le pull point de riz',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': 'aatise',
-    'link':
-      'https://www.aatise.com/fr/chemises-homme-a-la-demande/372-16522-chemise-zeus-100-lin-uni-compostable.html#/2-taille-m/573-couleur-off_white',
-    'price': 159,
-    'name': 'Chemise Zeus 100% Lin uni compostable',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/chemises/3980-t-shirt-jasmin-1300000259132.html#/79-taille_fastmag-m',
-    'price': 59,
-    'name': 'T-shirt Jasmin Noir',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'loom',
-    'link':
-      'https://www.loom.fr/collections/tous-les-vetements/products/le-chino',
-    'price': 75,
-    'name': 'Le chino',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': '1083',
-    'link': 'https://www.1083.fr/841-bonnet-kaki-1083.html',
-    'price': 35,
-    'name': 'Bonnet 841 kaki',
-    'date': '2020-02-25'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/chinos-pantalons-shorts/4227-pantalon-tuileries-1300000260671.html#/79-taille_fastmag-m',
-    'price': 119,
-    'name': 'Pantalon Tuileries x Komatsu®',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/chemises/4242-sur-chemise-roquette-1300000265713.html#/79-taille_fastmag-m',
-    'price': 99,
-    'name': 'Sur-chemise Roquette',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/pulls-sweatshirts/4220-jourdain-merinos-1300000262453.html#/79-taille_fastmag-m',
-    'price': 110,
-    'name': 'Pull Jourdain 100% mérinos',
-    'date': '2020-02-25'
-  },
-  {
-    'brand': 'loom',
-    'link':
-      'https://www.loom.fr/collections/tous-les-vetements/products/le-sweat',
-    'price': 60,
-    'name': 'Le sweat',
-    'date': '2020-02-25'
-  },
-  {
-    'brand': 'loom',
-    'link':
-      'https://www.loom.fr/collections/tous-les-vetements/products/le-pull-epais',
-    'price': 85,
-    'name': 'Le pull épais',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/socks-sigtuna-super-mario-pattern-black',
-    'price': 9,
-    'name': 'Socks Sigtuna Super Mario Pattern Black',
-    'date': '2020-02-25'
-  },
-  {
-    'brand': 'loom',
-    'link':
-      'https://www.loom.fr/collections/tous-les-vetements/products/la-chemise-chambray',
-    'price': 55,
-    'name': 'La chemise chambray',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': '1083',
-    'link': 'https://www.1083.fr/301-v-uni-bleu-marine-1083-couleur-bleu.html',
-    'price': 35,
-    'name': 'Tshirt 301 V Bleu Marine',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'aatise',
-    'link':
-      'https://www.aatise.com/fr/t-shirt-en-stock-homme/107-1217-polo-zorrie-100-lin-pique-noir-boutons-nacres.html#/2-taille-m/11-couleur-noir',
-    'price': 83,
-    'name': 'Polo Zorrie 100% lin piqué noir, boutons nacrés',
-    'date': '2020-02-25'
-  },
-  {
-    'brand': '1083',
-    'link': 'https://www.1083.fr/721-sur-chemise-1083xleshirondelles.html',
-    'price': 119,
-    'name': 'Sur-Chemise 721 DenimOriginal ...',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'aatise',
-    'link':
-      'https://www.aatise.com/fr/t-shirt-en-stock-homme/122-1388-polo-zorrie-100-lin-compostable-homme-coloris-marine.html#/2-taille-m/566-couleur-marine',
-    'price': 83,
-    'name': 'Polo Zorrie 100% lin compostable homme coloris marine',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/chemises/4219-chemise-charonne-tech-1300000265102.html#/79-taille_fastmag-m',
-    'price': 99,
-    'name': 'Chemise Charonne tech bleue',
-    'date': '2020-02-25'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/chinos-pantalons-shorts/4156-pantalon-plaisance-gris-1300000258227.html#/79-taille_fastmag-m',
-    'price': 99,
-    'name': 'Pantalon Plaisance Gris',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': '1083',
-    'link':
-      'https://www.1083.fr/101-droit-denimoriginal-inverse-1083-couleur-56.html',
-    'price': 99,
-    'name': 'Jean 101 coupe droite inverse',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': '1083',
-    'link':
-      'https://www.1083.fr/912-blanc-col-superdenim-1083-couleur-blanc.html',
-    'price': 139,
-    'name': 'Sneakers 912 basses col blanc/...',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'aatise',
-    'link':
-      'https://www.aatise.com/fr/pantalons-en-stock-homme/138-1587-pantalon-droit-5-poches-homme-zanzibar-tencel-et-coton-recycle-kaki.html#/592-taille-26/600-couleur-kaki',
-    'price': 149,
-    'name':
-      'Pantalon droit 5 poches Homme Zanzibar, Tencel et coton récyclé kaki',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/jacket-hoddevik-leaf-green',
-    'price': 199,
-    'name': 'Jacket Hoddevik Leaf Green',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': '1083',
-    'link':
-      'https://www.1083.fr/103-ajuste-flexdenim-noir-1083-couleur-noir.html',
-    'price': 119,
-    'name': 'Jean 103 coupe ajustée noir',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': '1083',
-    'link': 'https://www.1083.fr/301-v-uni-noir-1083-couleur-noir-67973.html',
-    'price': 35,
-    'name': 'Tshirt 301 V Noir',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': 'adresse',
-    'link':
-      'https://adresse.paris/vestes/3819-blouson-neil-1300000256209.html#/79-taille_fastmag-m',
-    'price': 299,
-    'name': 'Blouson Neil',
-    'date': '2020-02-25'
-  },
-  {
-    'brand': '1083',
-    'link': 'https://www.1083.fr/701-veste-flexdenim-brut-1083-couleur-bleu.html',
-    'price': 299,
-    'name': 'Veste 701 FlexDenim Bleu',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'loom',
-    'link':
-      'https://www.loom.fr/collections/tous-les-vetements/products/le-boxer',
-    'price': 18,
-    'name': 'Le boxer',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'loom',
-    'link':
-      'https://www.loom.fr/collections/tous-les-vetements/products/le-jogging',
-    'price': 50,
-    'name': 'Le jogging',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': '1083',
-    'link':
-      'https://www.1083.fr/163-chino-flexdenim-camel-1083-couleur-beige.html',
-    'price': 119,
-    'name': 'Chino 163 coupe ajustée camel',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': '1083',
-    'link':
-      'https://www.1083.fr/302-rond-uni-blanc-1083-couleur-blanc-67988.html',
-    'price': 35,
-    'name': 'Tshirt 302 Rond Blanc',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': '1083',
-    'link': 'https://www.1083.fr/301-v-uni-blanc-1083-couleur-blanc-67968.html',
-    'price': 35,
-    'name': 'Tshirt 301 V Blanc',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': '1083',
-    'link': 'https://www.1083.fr/302-rond-bordeaux.html',
-    'price': 35,
-    'name': 'Tshirt 302 Rond Uni Bordeaux',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'dedicated',
-    'link': 'https://www.dedicatedbrand.com/en/men/news/jacket-hoddevik-orange',
-    'price': 199,
-    'name': 'Jacket Hoddevik Orange',
-    'date': '2020-02-25'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/t-shirt-stockholm-superpower',
-    'price': 34,
-    'name': 'T-shirt Stockholm Superpower',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/t-shirt-stockholm-super-mario-pattern-black',
-    'price': 34,
-    'name': 'T-shirt Stockholm Super Mario Pattern Black',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'dedicated',
-    'link': 'https://www.dedicatedbrand.com/en/men/news/beanie-kiruna-leaf-green',
-    'price': 29,
-    'name': 'Beanie Kiruna Leaf Green',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'dedicated',
-    'link': 'https://www.dedicatedbrand.com/en/men/news/pants-kinna-black-black',
-    'price': 89,
-    'name': 'Pants Kinna Black',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': '1083',
-    'link':
-      'https://www.1083.fr/781-veste-droite-superdenim-infini-brut-1083-couleur-bleu.html',
-    'price': 205,
-    'name': 'Veste 781 SuperDenim Infini Bleu',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': '1083',
-    'link': 'https://www.1083.fr/912-blanc-rayures-1083-couleur-58.html',
-    'price': 139,
-    'name': 'Sneakers 912 basses blanc/rayures',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/t-shirt-stockholm-super-mario-black',
-    'price': 34,
-    'name': 'T-shirt Stockholm Super Mario Black',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/pants-kinna-leaf-green-leaf_-green',
-    'price': 89,
-    'name': 'Pants Kinna Leaf Green',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/worker-jacket-sala-thin-stripes',
-    'price': 119,
-    'name': 'Worker Jacket Sala Thin Stripes',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'dedicated',
-    'link': 'https://www.dedicatedbrand.com/en/men/news/sweater-mora-ducks',
-    'price': 89,
-    'name': 'Sweater Mora Ducks',
-    'date': '2020-02-25'
-  },
-  {
-    'brand': 'dedicated',
-    'link': 'https://www.dedicatedbrand.com/en/men/news/sweater-trysil-big-check',
-    'price': 99,
-    'name': 'Sweater Trysil Big Check',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': '1083',
-    'link':
-      'https://www.1083.fr/302-rond-uni-bleu-electrique-1083-couleur-56.html',
-    'price': 35,
-    'name': 'Tshirt 302 Rond Uni Bleu Elect...',
-    'date': '2020-02-25'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/t-shirt-stockholm-love-your-mother',
-    'price': 34,
-    'name': 'T-shirt Stockholm Love Your Mother',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': '1083',
-    'link': 'https://www.1083.fr/302-rond-uni-noir-1083-couleur-noir-67993.html',
-    'price': 35,
-    'name': 'Tshirt 302 Rond Noir',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': '1083',
-    'link': 'https://www.1083.fr/302-rond-uni-brique-1083-couleur-49.html',
-    'price': 35,
-    'name': 'Tshirt 302 Rond Uni Brique',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': '1083',
-    'link': 'https://www.1083.fr/301-v-uni-rouge-1083-couleur-rouge-67978.html',
-    'price': 35,
-    'name': 'Tshirt 301 V Rouge',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': '1083',
-    'link': 'https://www.1083.fr/111-cargo-kaki.html',
-    'price': 119,
-    'name': 'Jeans 111 Cargo Kaki',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/cardigan-orsa-black-black',
-    'price': 79,
-    'name': 'Cardigan Orsa Black',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': '1083',
-    'link': 'https://www.1083.fr/163-chino-flexdenim-bleu-1083-couleur-bleu.html',
-    'price': 119,
-    'name': 'Chino 163 Coupe ajustée Bleu',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/sweatshirt-malmoe-bold-support-leaf-green',
-    'price': 79,
-    'name': 'Sweatshirt Malmoe Bold Support Leaf Green',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': '1083',
-    'link':
-      'https://www.1083.fr/103-ajuste-superdenimflex-indigo-brut-1083-couleur-bleu.html',
-    'price': 119,
-    'name': 'Jean 103 coupe ajustée indigo ...',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/t-shirt-stockholm-nes-consol',
-    'price': 34,
-    'name': 'T-shirt Stockholm NES Consol',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': '1083',
-    'link':
-      'https://www.1083.fr/320-aventure-blanc-1083-couleur-blanc-74909.html',
-    'price': 39,
-    'name': 'Tshirt 320 Aventure Blanc',
-    'date': '2020-02-25'
-  },
-  {
-    'brand': '1083',
-    'link': 'https://www.1083.fr/302-rond-kaki.html',
-    'price': 35,
-    'name': 'Tshirt 302 Rond Uni Kaki',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/sweatshirt-malmoe-all-we-have',
-    'price': 79,
-    'name': 'Sweatshirt Malmoe All We Have',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': '1083',
-    'link':
-      'https://www.1083.fr/130-leo-ajuste-superdenim-brut-1083-couleur-bleu.html',
-    'price': 119,
-    'name': 'jean 130 coupe Ajustée bleu',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': '1083',
-    'link':
-      'https://www.1083.fr/163-chino-flexdenim-anthracite-1083-couleur-gris.html',
-    'price': 119,
-    'name': 'Chino 163 coupe ajustée anthra...',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/t-shirt-stockholm-drawn-mountain-grey-melange',
-    'price': 34,
-    'name': 'T-shirt Stockholm Drawn Mountain Grey Melange',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': '1083',
-    'link':
-      'https://www.1083.fr/912-blanc-flexdenim-rouge-1083-couleur-blanc.html',
-    'price': 139,
-    'name': 'Sneakers 912 basses blanc/rouge',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/puffer-jacket-dundret-black',
-    'price': 249,
-    'name': 'Puffer Jacket Dundret Black',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/sweatshirt-halfzip-storlien-spread-logo-black',
-    'price': 89,
-    'name': 'Sweatshirt Halfzip Storlien Spread Logo Black',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'dedicated',
-    'link': 'https://www.dedicatedbrand.com/en/men/news/socks-sigtuna-clouds',
-    'price': 9,
-    'name': 'Socks Sigtuna Clouds',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': '1083',
-    'link':
-      'https://www.1083.fr/302-rond-uni-rouge-1083-couleur-rouge-67998.html',
-    'price': 35,
-    'name': 'Tshirt 302 Rond Rouge',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': '1083',
-    'link':
-      'https://www.1083.fr/163-chino-ajuste-flexdenim-vert-tilleul-1083-couleur-53.html',
-    'price': 119,
-    'name': 'Chino 163 coupe ajustée Vert T...',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/t-shirt-stockholm-education',
-    'price': 34,
-    'name': 'T-shirt Stockholm Education',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/puffer-jacket-dundret-orange',
-    'price': 249,
-    'name': 'Puffer Jacket Dundret Orange',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'dedicated',
-    'link': 'https://www.dedicatedbrand.com/en/men/news/beanie-narvik-off-white',
-    'price': 34,
-    'name': 'Beanie Narvik Off-White',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': 'dedicated',
-    'link': 'https://www.dedicatedbrand.com/en/men/news/beanie-kiruna-orange',
-    'price': 29,
-    'name': 'Beanie Kiruna Orange',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'dedicated',
-    'link': 'https://www.dedicatedbrand.com/en/men/news/jacket-hoddevik-black',
-    'price': 199,
-    'name': 'Jacket Hoddevik Black',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': '1083',
-    'link': 'https://www.1083.fr/302-rond-uni-bleu-marine-1083-couleur-bleu.html',
-    'price': 35,
-    'name': 'Tshirt 302 Rond Bleu Marine',
-    'date': '2020-02-25'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/t-shirt-stockholm-universal-love',
-    'price': 34,
-    'name': 'T-shirt Stockholm Universal Love',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'dedicated',
-    'link': 'https://www.dedicatedbrand.com/en/men/news/beanie-narvik-black',
-    'price': 39,
-    'name': 'Beanie Narvik Black',
-    'date': '2020-02-25'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/t-shirt-stockholm-good-things',
-    'price': 34,
-    'name': 'T-shirt Stockholm Good Things',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'dedicated',
-    'link': 'https://www.dedicatedbrand.com/en/men/news/t-shirt-stockholm-bowser',
-    'price': 34,
-    'name': 'T-shirt Stockholm Bowser',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'dedicated',
-    'link': 'https://www.dedicatedbrand.com/en/men/news/sweater-mora-clouds',
-    'price': 89,
-    'name': 'Sweater Mora Clouds',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/t-shirt-stockholm-cross-stitch-support',
-    'price': 34,
-    'name': 'T-shirt Stockholm Cross Stitch Support',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'dedicated',
-    'link': 'https://www.dedicatedbrand.com/en/men/news/jacket-leksand-black',
-    'price': 129,
-    'name': 'Jacket Leksand Black',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'dedicated',
-    'link': 'https://www.dedicatedbrand.com/en/men/news/cardigan-molkom-ducks',
-    'price': 99,
-    'name': 'Cardigan Molkom Ducks',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': '1083',
-    'link': 'https://www.1083.fr/718-cardigan-volontaire.html',
-    'price': 119,
-    'name': '718 Cardigan Homme Volontaire ...',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'dedicated',
-    'link': 'https://www.dedicatedbrand.com/en/men/news/t-shirt-stockholm-whales',
-    'price': 34,
-    'name': 'T-shirt Stockholm Whales',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': '1083',
-    'link':
-      'https://www.1083.fr/163-chino-ajuste-flexdenim-bordeaux-1083-couleur-rouge.html',
-    'price': 119,
-    'name': 'Chino 163 Coupe ajustée Bordeaux',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/sweater-mora-cut-mountain',
-    'price': 89,
-    'name': 'Sweater Mora Cut Mountain',
-    'date': '2020-07-29'
-  },
-  {
-    'brand': 'dedicated',
-    'link': 'https://www.dedicatedbrand.com/en/men/news/socks-sigtuna-green-tube',
-    'price': 9,
-    'name': 'Socks Sigtuna Green Tube',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'dedicated',
-    'link': 'https://www.dedicatedbrand.com/en/men/news/sweater-kalmar-black',
-    'price': 79,
-    'name': 'Sweater Kalmar Black',
-    'date': '2020-06-16'
-  },
-  {
-    'brand': 'dedicated',
-    'link': 'https://www.dedicatedbrand.com/en/men/news/cardigan-orsa-brown',
-    'price': 79,
-    'name': 'Cardigan Orsa Brown',
-    'date': '2020-09-23'
-  },
-  {
-    'brand': 'loom',
-    'link':
-      'https://www.loom.fr/collections/tous-les-vetements/products/le-pull-fin-en-laine',
-    'price': 70,
-    'name': 'Le pull fin en laine',
-    'date': '2020-08-25'
-  },
-  {
-    'brand': 'dedicated',
-    'link':
-      'https://www.dedicatedbrand.com/en/men/news/socks-sigtuna-super-mario-pattern-white',
-    'price': 9,
-    'name': 'Socks Sigtuna Super Mario Pattern White',
-    'date': '2020-08-25'
+    link:
+      'https://panafrica-store.com/en/product/panafrica-arusha-ivoire-sneakers-ethical-wax-suede-responsible-returnable-recyclable/',
+    brand: 'panafrica',
+    price: 145,
+    name: 'Arusha-ivoire',
+    photo:
+      'https://panafrica-store.com/wp-content/uploads/2021/09/RUN-06_01-432x533.jpg',
+    uuid: '818f8262-abc9-5a32-a717-adab11ec222e',
+    released: '2022-08-04'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/le-t-shirt-homme',
+    brand: 'loom',
+    price: 25,
+    name: 'Le t-shirt',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/XT7oCJ0N-Il-jZBYBddhZdqc0Ilhb7f0USo1_1InOq8.jpg?v=1673023717&width=3000',
+    uuid: '244fa0aa-ba21-59b7-8f74-ba6fed993746',
+    released: '2022-10-08'
+  },
+  {
+    link:
+      'https://www.hast.fr/fr/chemise-classique-en-popeline-blanche-poignets-mousquetaires-41.html',
+    brand: 'hast',
+    price: 69,
+    name: 'Chemise en popeline blanche à poignets mousquetaires',
+    photo:
+      'https://media2.hast.fr/6499-home_default/xchemise-classique-en-popeline-blanche-poignets-mousquetaires.jpg.pagespeed.ic.Qm9Qd62ycG.webp',
+    uuid: '4e3edd1c-03cb-581f-a35b-0025da408aa6',
+    released: '2022-12-27'
+  },
+  {
+    link:
+      'https://www.hast.fr/fr/chemise-classique-en-twill-blanche-a-poignets-mousquetaires-296.html',
+    brand: 'hast',
+    price: 69,
+    name: 'Chemise en twill blanche à poignets mousquetaires',
+    photo:
+      'https://media1.hast.fr/6502-home_default/xchemise-classique-en-twill-blanche-a-poignets-mousquetaires.jpg.pagespeed.ic._U-l2-iKzk.webp',
+    uuid: '51340ee8-f52d-5dd6-a5fd-dc0d43589c9c',
+    released: '2022-12-03'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/le-sweat-a-capuche',
+    brand: 'loom',
+    price: 75,
+    name: 'Le sweat à capuche',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/L0jICxuDdFJwYX7Z3eOtHI8ab18c0gMXuOArVgAYTg8_b97a60c5-c261-49db-9e91-5a7093f16a87.jpg?v=1672827139&width=3000',
+    uuid: 'c5a41845-6f4e-548c-94c3-e98a78df585b',
+    released: '2022-10-02'
+  },
+  {
+    link:
+      'https://www.hast.fr/fr/chemise-classique-en-oxford-bleue-a-poignets-mousquetaires-841.html',
+    brand: 'hast',
+    price: 69,
+    name: 'Chemise en oxford bleue à poignets mousquetaires',
+    photo:
+      'https://media1.hast.fr/7042-home_default/xchemise-classique-en-oxford-bleue-a-poignets-mousquetaires.jpg.pagespeed.ic.Ujl47qfFCV.webp',
+    uuid: '991c49a9-ec95-5686-a823-9de2e5eac97b',
+    released: '2022-09-08'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/le-bonnet-homme',
+    brand: 'loom',
+    price: 30,
+    name: 'Le bonnet',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/r77nOz0MXRXPFSF4jSt-kUiAaodn7_aStxiOWe5t2QQ.jpg?v=1672915396&width=3000',
+    uuid: '2a7a2d9e-ba3e-5cdb-a5e1-e60d4106dc0f',
+    released: '2023-01-20'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/la-ceinture-large',
+    brand: 'loom',
+    price: 60,
+    name: 'La ceinture large',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/aY1D6jJ2z6sZEMeSwMqwhrOSRyfvSr7hQdH0Kap6FI4.jpg?v=1672822567&width=3000',
+    uuid: '85c74583-f096-53cb-800b-83f86d15a857',
+    released: '2022-11-22'
+  },
+  {
+    link: 'https://www.loom.fr/collections/vestiaire-homme/products/le-sweat',
+    brand: 'loom',
+    price: 60,
+    name: 'Le sweat',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/3GO_1U7aNsrAr-RXk03OfqlvGZOYTGNRiXsRurR_jrM.jpg?v=1672827988&width=3000',
+    uuid: '41bdf71d-6faa-51e0-b1ea-fed969f42ae9',
+    released: '2022-12-16'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/le-pull-epais-homme',
+    brand: 'loom',
+    price: 95,
+    name: 'Le pull épais',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/FIfhvkbfmCHebeo6259hDYIo7jbf3WFV_l-edL8H1Zw.jpg?v=1672826418&width=3000',
+    uuid: 'bfa8e5e8-13fa-58a0-9c01-28030f093000',
+    released: '2022-09-04'
+  },
+  {
+    link: 'https://panafrica-store.com/en/product/arusha-violet/',
+    brand: 'panafrica',
+    price: 145,
+    name: 'Arusha-violet',
+    photo:
+      'https://panafrica-store.com/wp-content/uploads/2022/10/PAN08548-432x533.jpg',
+    uuid: 'b37a29a0-8c0e-534b-8cc0-b98b47c8d658',
+    released: '2022-12-21'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/la-chemise-coton-lin',
+    brand: 'loom',
+    price: 65,
+    name: 'La chemise coton-lin',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/PJTDnRRpPVAS_xfGfx_yjCq6GiSnyv2BTV9AuqGOvEQ.jpg?v=1672822844&width=3000',
+    uuid: 'c064d689-ea2c-5744-b4d9-ca4ff4dedd5b',
+    released: '2022-10-07'
+  },
+  {
+    link: 'https://www.loom.fr/collections/vestiaire-homme/products/le-jogging',
+    brand: 'loom',
+    price: 70,
+    name: 'Le jogging',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/M6eJbzzjsoPqJgyfIMnBrw0KlnalpPKfhAUE1NoC2yk.jpg?v=1673019972&width=3000',
+    uuid: '95694b7e-b940-52ee-9b7e-dac70e8a0dcf',
+    released: '2022-08-11'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/le-pull-col-roule',
+    brand: 'loom',
+    price: 80,
+    name: 'Le pull col roulé',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/Aa9m5j_6wOznB52fcmbvVLbdgdNAYmWI46ufj6xyMRM.jpg?v=1672826390&width=3000',
+    uuid: '7d80d448-83fe-5a14-9190-e83e0a4db386',
+    released: '2022-12-25'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/la-chemise-en-jean',
+    brand: 'loom',
+    price: 65,
+    name: 'La chemise en jean',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/XqlQkHweIOZO5ROWgRRUgiWJJMr7apeUdDcwAtqTLNA.jpg?v=1672834547&width=3000',
+    uuid: 'bb17cd80-3e2b-58e3-84c1-c8d045d33cc2',
+    released: '2023-01-21'
+  },
+  {
+    link:
+      'https://www.hast.fr/fr/chemise-cintree-en-fil-a-fil-bleue-a-poignets-mousquetaires-650.html',
+    brand: 'hast',
+    price: 69,
+    name: 'Chemise cintrée en fil-à-fil bleu clair à poignets mousquetaires',
+    photo:
+      'https://media2.hast.fr/6523-home_default/xchemise-cintree-en-fil-a-fil-bleue-a-poignets-mousquetaires.jpg.pagespeed.ic.6siAXwIi-z.webp',
+    uuid: 'bbfc2a05-4e65-5139-8b57-d35a81ed1fc2',
+    released: '2022-08-12'
+  },
+  {
+    link: 'https://www.hast.fr/fr/chemise-cintree-en-popeline-blanche-842.html',
+    brand: 'hast',
+    price: 79,
+    name: 'Chemise cintrée en popeline blanche',
+    photo:
+      'https://media1.hast.fr/7112-home_default/xchemise-cintree-en-popeline-blanche.jpg.pagespeed.ic.ctX1ZXC5E1.webp',
+    uuid: '39c8dd50-960a-534c-8d83-bedf0854e927',
+    released: '2022-11-25'
+  },
+  {
+    link:
+      'https://www.hast.fr/fr/chemise-classique-en-popeline-bleu-clair-a-poignets-mousquetaires-203.html',
+    brand: 'hast',
+    price: 69,
+    name: 'Chemise en popeline bleu clair à poignets mousquetaires',
+    photo:
+      'https://media2.hast.fr/6522-home_default/xchemise-classique-en-popeline-bleu-clair-a-poignets-mousquetaires.jpg.pagespeed.ic.jYkIjCwn_H.webp',
+    uuid: 'e58b90d3-ac4e-57ed-becd-cb57cf1a80f9',
+    released: '2022-11-24'
+  },
+  {
+    link:
+      'https://panafrica-store.com/en/product/arusha-saphir-responsible-colorful-ethical-sneakers/',
+    brand: 'panafrica',
+    price: 145,
+    name: 'Arusha-saphir',
+    photo:
+      'https://panafrica-store.com/wp-content/uploads/2022/10/PAN08390-432x533.jpg',
+    uuid: '6dc62b71-27ed-5777-ad75-a6526f2cc67e',
+    released: '2022-12-16'
+  },
+  {
+    link:
+      'https://www.hast.fr/fr/chemise-classique-en-oxford-bleu-clair-a-poignets-mousquetaires-96.html',
+    brand: 'hast',
+    price: 69,
+    name: 'Chemise en oxford bleu clair à poignets mousquetaires',
+    photo:
+      'https://media1.hast.fr/6625-home_default/chemise-classique-en-oxford-bleu-clair-a-poignets-mousquetaires.jpg',
+    uuid: '2b260305-b401-5477-8d6c-258c456d2bfa',
+    released: '2022-12-14'
+  },
+  {
+    link: 'https://www.loom.fr/collections/vestiaire-homme/products/le-boxer',
+    brand: 'loom',
+    price: 20,
+    name: 'Le boxer',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/CaJ7HhFr1595H4N4QftXl3CJQgsAZXcd9flFpMhtFFQ.jpg?v=1672828469&width=3000',
+    uuid: '1035e7a1-e4a3-55e0-9650-4594cf563a7f',
+    released: '2022-11-20'
+  },
+  {
+    link: 'https://panafrica-store.com/en/product/arusha-amande/',
+    brand: 'panafrica',
+    price: 145,
+    name: 'Arusha-amande',
+    photo:
+      'https://panafrica-store.com/wp-content/uploads/2022/10/PAN08544-432x533.jpg',
+    uuid: 'c49317b0-15aa-5c13-8d04-2ba818147794',
+    released: '2022-11-22'
+  },
+  {
+    link:
+      'https://www.hast.fr/fr/chemise-classique-en-oxford-blanche-a-poignets-mousquetaires-295.html',
+    brand: 'hast',
+    price: 69,
+    name: 'Chemise en oxford blanche à poignets mousquetaires',
+    photo:
+      'https://media2.hast.fr/6501-home_default/xchemise-classique-en-oxford-blanche-a-poignets-mousquetaires.jpg.pagespeed.ic.ELL2Zqgtr_.webp',
+    uuid: '42961ee8-88a3-5afc-9b6b-37e9a148b3f4',
+    released: '2022-10-20'
+  },
+  {
+    link:
+      'https://www.hast.fr/fr/chemise-classique-en-fil-a-fil-bleu-clair-a-poignets-mousquetaires-801.html',
+    brand: 'hast',
+    price: 69,
+    name: 'Chemise en fil-à-fil bleu clair à poignets mousquetaires',
+    photo:
+      'https://media3.hast.fr/7540-home_default/chemise-classique-en-fil-a-fil-bleu-clair-a-poignets-mousquetaires.jpg',
+    uuid: '1c3ecd2e-cb0f-5200-be34-dfae8f7ba3c1',
+    released: '2022-10-30'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/le-pull-leger-en-coton',
+    brand: 'loom',
+    price: 80,
+    name: 'Le pull léger en coton',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/Pl_Pbyo1WZkhHiDLKdp5dT8cfIRzqb9aRWfQnbJ3nlI.jpg?v=1673619296&width=3000',
+    uuid: 'dc111227-b5d8-5f1e-9c9d-cbe2dc3c4b57',
+    released: '2022-09-30'
+  },
+  {
+    link: 'https://www.loom.fr/collections/vestiaire-homme/products/le-calecon',
+    brand: 'loom',
+    price: 25,
+    name: 'Le caleçon',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/dfczC3rNdxGe-bsNkvJkOd_BjqyKFIlMWh5EbrXhkbg.jpg?v=1672932137&width=3000',
+    uuid: 'e78b0b01-ad4d-5fa9-98aa-31a9b4b86862',
+    released: '2022-08-05'
+  },
+  {
+    link:
+      'https://panafrica-store.com/en/product/arusha-sauge-colorful-responsible-sneakers/',
+    brand: 'panafrica',
+    price: 145,
+    name: 'Arusha-sauge',
+    photo:
+      'https://panafrica-store.com/wp-content/uploads/2022/10/PAN08389-432x533.jpg',
+    uuid: 'b8c97ffa-c6ab-5cc6-80f0-5d1d64ba4466',
+    released: '2022-10-12'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/les-chaussettes-en-coton-homme',
+    brand: 'loom',
+    price: 12,
+    name: 'Les chaussettes en coton',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/A23rSQcJTswwm_1JbsmgguaOxKm44_OMhicBy1pgyvI.jpg?v=1672835350&width=3000',
+    uuid: '307262ae-9608-56e1-9443-8e4f9db3c055',
+    released: '2022-11-04'
+  },
+  {
+    link:
+      'https://panafrica-store.com/en/product/panafrica-arusha-corail-colorful-responsible-sneakers-suede-recyclable/',
+    brand: 'panafrica',
+    price: 145,
+    name: 'Arusha-corail',
+    photo:
+      'https://panafrica-store.com/wp-content/uploads/2022/04/P4262637-copie-432x533.jpg',
+    uuid: '176d32d3-92b9-55d0-aa3b-45d681d16059',
+    released: '2022-09-12'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/le-t-shirt-merinos',
+    brand: 'loom',
+    price: 65,
+    name: 'Le t-shirt mérinos',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/rIW6ZediMVM1NI8_PutundO35Bqei5SsHs63s_cEpL8.jpg?v=1673367569&width=3000',
+    uuid: 'ab49ce97-f243-5ad3-8a81-d5316acda88d',
+    released: '2022-12-04'
+  },
+  {
+    link:
+      'https://panafrica-store.com/en/product/panafrica-arusha-lila-colourful-responsible-ethical-suede-sneakers-returnable/',
+    brand: 'panafrica',
+    price: 145,
+    name: 'Arusha-lila',
+    photo:
+      'https://panafrica-store.com/wp-content/uploads/2022/04/P4262638-copie-432x533.jpg',
+    uuid: '519fca6d-ba15-5a48-839a-e6b612337701',
+    released: '2022-09-01'
+  },
+  {
+    link: 'https://www.loom.fr/collections/vestiaire-homme/products/le-polo',
+    brand: 'loom',
+    price: 50,
+    name: 'Le polo',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/lfPrmKPBPaMEnd31yPi8BmUE_gx79y6CwRbWDBNMglw.jpg?v=1672826181&width=3000',
+    uuid: '68e71c50-b81b-5e0e-8ae4-1c3cd716b7c1',
+    released: '2022-11-08'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/les-baskets',
+    brand: 'loom',
+    price: 115,
+    name: 'Les baskets',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/C329dXxBQdi45phI8ZdF_LR4IhtzN9tQaMhp2sXDGFw.jpg?v=1672828315&width=3000',
+    uuid: '686f722d-0e2c-5ce4-907a-8882b9862171',
+    released: '2023-01-19'
+  },
+  {
+    link: 'https://panafrica-store.com/en/product/arusha-vanille/',
+    brand: 'panafrica',
+    price: 145,
+    name: 'Arusha-vanille',
+    photo:
+      'https://panafrica-store.com/wp-content/uploads/2022/10/PAN08547-432x533.jpg',
+    uuid: 'c2246893-26d7-5f45-9434-eff2dd2fbc70',
+    released: '2022-11-06'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/les-socquettes-homme',
+    brand: 'loom',
+    price: 9,
+    name: 'Les socquettes',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/OP6MudEE-eqy5qP5xkFcX5fwfk52JRl5UvNvNKkLr0.jpg?v=1672828528&width=3000',
+    uuid: '3b4ca0de-a0d7-5554-9354-b86bc2b9b748',
+    released: '2023-01-21'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/le-jean-homme',
+    brand: 'loom',
+    price: 100,
+    name: 'Le jean',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/LNWXR6dOYdtgJVu8FbO1CHHx1JOjb74Hp3_lf7veUJI.jpg?v=1672852345&width=3000',
+    uuid: '0f028753-1a9e-5991-93e6-32f57d3a8fe2',
+    released: '2022-12-18'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/la-chemise-en-flanelle',
+    brand: 'loom',
+    price: 60,
+    name: 'La chemise en flanelle',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/rdsX5zbmtFXaUyD3VMGEACgGHTP9oCjE4c-HqQiaxWI.jpg?v=1672822855&width=3000',
+    uuid: '336074cd-5a72-5883-af4f-56a46a51ad33',
+    released: '2022-09-26'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/le-jean-noir-homme',
+    brand: 'loom',
+    price: 90,
+    name: 'Le jean noir',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/uDJfoaLrndQHkZ6074RIlV_pSQjFK9tL4f0UUPDQHE0.jpg?v=1672830701&width=3000',
+    uuid: '9ef29a12-1b30-5114-a753-316f38fa80a8',
+    released: '2022-09-07'
+  },
+  {
+    link: 'https://panafrica-store.com/en/product/arusha-ciel/',
+    brand: 'panafrica',
+    price: 145,
+    name: 'Arusha-ciel',
+    photo:
+      'https://panafrica-store.com/wp-content/uploads/2022/10/PAN08546-432x533.jpg',
+    uuid: '3486554f-75e7-57f8-afcd-0a3efa8dc9eb',
+    released: '2022-08-26'
+  },
+  {
+    link:
+      'https://panafrica-store.com/en/product/panafrica-arusha-mauve-ethical-colorful-sneakers-recyclables-suede-responsible/',
+    brand: 'panafrica',
+    price: 145,
+    name: 'Arusha-mauve',
+    photo:
+      'https://panafrica-store.com/wp-content/uploads/2022/04/P4262645-copie-432x533.jpg',
+    uuid: 'ffa67d04-5d74-555b-9c1a-6024e6df43af',
+    released: '2022-12-24'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/lecharpe-homme',
+    brand: 'loom',
+    price: 70,
+    name: "L'écharpe",
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/hoTVDj_Yo-f0X7hCI_JTha0tVtFkTlxHKwHrng7nSuk.jpg?v=1672828799&width=3000',
+    uuid: '668d4773-009b-5095-9d38-fd4a4f40a572',
+    released: '2022-12-13'
+  },
+  {
+    link: 'https://www.loom.fr/collections/vestiaire-homme/products/le-short',
+    brand: 'loom',
+    price: 65,
+    name: 'Le short',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/VzjGB4uunUeFP86su1RSzfRr74Qx4bzyRTq4xQnwuVI.jpg?v=1672831390&width=3000',
+    uuid: 'd1ab6154-697d-51f7-9961-30b3f10041df',
+    released: '2022-10-18'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/la-chemise-chambray',
+    brand: 'loom',
+    price: 60,
+    name: 'La chemise chambray',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/rzlyjr-kqEIcr2HWktwReP2Nh1n9IJ6QSUJ_bR_INC8.jpg?v=1672822792&width=3000',
+    uuid: '0d24ca86-d5dc-5f75-8d71-03bbb54da071',
+    released: '2022-11-22'
+  },
+  {
+    link: 'https://www.loom.fr/collections/vestiaire-homme/products/le-chino',
+    brand: 'loom',
+    price: 85,
+    name: 'Le chino',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/ExyYW613h7p_32_V-k1omDZUl5E81R-7k3w7por0j9w.jpg?v=1673966269&width=3000',
+    uuid: 'bd254ab5-993f-5a67-9b27-b6df5840d76f',
+    released: '2022-09-01'
+  },
+  {
+    link:
+      'https://www.hast.fr/fr/chemise-poignet-mousquetaire-extra-ajustee-blanche-560.html',
+    brand: 'hast',
+    price: 69,
+    name: 'Chemise cintrée en popeline blanche poignets mousquetaires',
+    photo:
+      'https://media1.hast.fr/6500-home_default/xchemise-poignet-mousquetaire-extra-ajustee-blanche.jpg.pagespeed.ic.Qm9Qd62ycG.webp',
+    uuid: '72801ff7-54fa-5fa9-940f-b30bd292294c',
+    released: '2022-10-03'
+  },
+  {
+    link:
+      'https://panafrica-store.com/en/product/panafrica-arusha-ebene-sneakers-ethical-unisex-suede-responsible-returnable-recyclable/',
+    brand: 'panafrica',
+    price: 145,
+    name: 'Arusha-ébène',
+    photo:
+      'https://panafrica-store.com/wp-content/uploads/2021/07/RUN-05_01-432x533.jpg',
+    uuid: '482aae3c-ef46-5f2c-a036-7cb2894d7ccf',
+    released: '2023-01-04'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/la-carte-cadeau-physique',
+    brand: 'loom',
+    price: 50,
+    name: 'La carte cadeau physique',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/lD9REWMEDtm1cbs4MUzAaOcB_jKg6dWvtRd4Krv5Kk.jpg?v=1672833871&width=3000',
+    uuid: 'cac60100-020a-5ea9-b8ac-de043e111ebd',
+    released: '2022-12-12'
+  },
+  {
+    link: 'https://www.hast.fr/fr/chemise-blanche-a-col-casse-133.html',
+    brand: 'hast',
+    price: 79,
+    name: 'Chemise en popeline blanche',
+    photo:
+      'https://media2.hast.fr/6638-home_default/chemise-blanche-a-col-casse.jpg',
+    uuid: '83a3b21a-112d-5b59-9ddd-1ed6a74949f6',
+    released: '2022-08-03'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/les-chaussettes-en-laine',
+    brand: 'loom',
+    price: 15,
+    name: 'Les chaussettes en laine',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/qnjNMvQLxBesQmxwdDhJ-uv_olG7Icq6eMDX7lgl0L8.jpg?v=1672828499&width=3000',
+    uuid: 'b9d36662-31a5-5fcd-81ca-8a58d2cbc271',
+    released: '2022-09-28'
+  },
+  {
+    link:
+      'https://panafrica-store.com/en/product/panafrica-arusha-sable-ethical-wax-suede-shoes-responsible-returnable/',
+    brand: 'panafrica',
+    price: 145,
+    name: 'Arusha-sable',
+    photo:
+      'https://panafrica-store.com/wp-content/uploads/2022/04/P4262642-copie-432x533.jpg',
+    uuid: '2b481135-ad7a-5848-bc29-66601343cfd5',
+    released: '2022-08-31'
+  },
+  {
+    link: 'https://www.loom.fr/collections/vestiaire-homme/products/le-hoodie',
+    brand: 'loom',
+    price: 95,
+    name: 'Le hoodie',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/Y4fbwneJWr2NFZOmsz7vU4Ti7SQHmqE7MFCqxcmqDUU.jpg?v=1672828779&width=3000',
+    uuid: '43fb39bd-5e22-520b-9c6a-5eb2717f69b1',
+    released: '2023-01-03'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/la-chemise-oxford',
+    brand: 'loom',
+    price: 60,
+    name: 'La chemise oxford',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/zG8oiB72q5FGy2STqMay1rXEVz9cClGU6OfQcHBfEic.jpg?v=1672936083&width=3000',
+    uuid: 'ed3fe824-0f6b-5c30-99b7-acd73418e4c8',
+    released: '2022-11-11'
+  },
+  {
+    link:
+      'https://panafrica-store.com/en/product/arusha-terracotta-ecofriendly-colorful-sneakers/',
+    brand: 'panafrica',
+    price: 145,
+    name: 'Arusha-terracotta',
+    photo:
+      'https://panafrica-store.com/wp-content/uploads/2022/10/PAN08545-432x533.jpg',
+    uuid: 'b359eb8f-7b6d-5372-815e-47a36df9ce04',
+    released: '2022-11-07'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/la-carte-cadeau-virtuelle',
+    brand: 'loom',
+    price: 25,
+    name: 'La carte cadeau virtuelle',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/0bxGiJ-4WEsiMF-lIZ5r-t52wyCdRjZlX0xYRGYCuiU.jpg?v=1672822495&width=3000',
+    uuid: 'ae4dbac7-94a4-5a89-9af8-155791cf0501',
+    released: '2022-12-11'
+  },
+  {
+    link:
+      'https://www.loom.fr/collections/vestiaire-homme/products/le-maillot-de-bain',
+    brand: 'loom',
+    price: 55,
+    name: 'Le maillot de bain',
+    photo:
+      '//cdn.shopify.com/s/files/1/1355/7899/products/cEb-n6Uzf-rNy7FG42e4josYY-ZPRxCNwJ25AFlr3qM.jpg?v=1672826148&width=3000',
+    uuid: 'a58c5e4d-8603-513b-8407-b86a5cc496e6',
+    released: '2022-12-22'
+  },
+  {
+    link:
+      'https://panafrica-store.com/en/product/arusha-poudre-ethical-colorful-responsible-sneakers/',
+    brand: 'panafrica',
+    price: 145,
+    name: 'Arusha-poudré',
+    photo:
+      'https://panafrica-store.com/wp-content/uploads/2022/10/PAN08384-432x533.jpg',
+    uuid: '1cf18c46-4b9c-56fd-9a86-46225fd9e295',
+    released: '2022-10-28'
   }
 ];

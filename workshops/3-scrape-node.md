@@ -59,6 +59,10 @@ nothing to commit, working tree clean
 
 <img src="./img/3-terminal.png" width="75%"/>
 
+**sandox** - in programming - usually refers to the execution of your programs for independent evaluation, monitoring or testing.
+
+It means when we call `node sandbox.js`, we want to test some piece of codes in insolation.
+
 4. **If nothing happens or errors occur**, check your [node server installation (from Theme 2)](https://github.com/92bondstreet/javascript-empire/blob/master/themes/2.md#-just-tell-me-what-to-do)
 
 ## 📱 How to scrape with Node.js? 1 example to do it
@@ -106,7 +110,7 @@ products.forEach(product => {
 
 ## 👕 A complete Scraping Example for dedicatedbrand.com
 
-[server/sources/dedicatedbrand.js](../server/sources/dedicatedbrand.js) contains a function to scrape a given [Dedicated](https://www.dedicatedbrand.com/en/) products page.
+[server/eshops/dedicatedbrand.js](../server/eshops/dedicatedbrand.js) contains a function to scrape a given [Dedicated](https://www.dedicatedbrand.com/en/) products page.
 
 To start the example, call with `node` cli or use the `Makefile` target:
 

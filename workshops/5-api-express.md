@@ -58,6 +58,10 @@ nothing to commit, working tree clean
 
 <img src="./img/5-sandbox-db.png"/>
 
+**sandox** - in programming - usually refers to the execution of your programs for independent evaluation, monitoring or testing.
+
+It means when we call `node sandbox-db.js`, we want to test some piece of codes related to the db in insolation.
+
 3. **Check the terminal output for the command `node api.js`**
 
 ```sh
@@ -77,14 +81,14 @@ nothing to commit, working tree clean
 Fetch a specific product.
 
 ```sh
-❯ curl -H "Accept: application/json" http://localhost:8092/products/f9360699-2c7d-5cec-8529-374d3e166f87
+❯ curl -H "Accept: application/json" http://localhost:8092/products/244fa0aa-ba21-59b7-8f74-ba6fed993746
 {
-    "_id": "f9360699-2c7d-5cec-8529-374d3e166f87",
-    "link": "https://www.loom.fr/collections/hauts/products/le-t-shirt",
-    "brand": "loom",
-    "price": 20,
-    "name": "Le t-shirt en coton",
-    "photo":"//cdn.shopify.com/s/files/1/1355/7899/products/loom_tshirt_coton_gris_anthracite_face_2_394x.jpg?v=1611741180"
+  "_id": "244fa0aa-ba21-59b7-8f74-ba6fed993746",
+  "link": "https://www.loom.fr/collections/vestiaire-homme/products/le-t-shirt-homme",
+  "brand": "loom",
+  "price": 25,
+  "name": "Le t-shirt",
+  "photo":" //cdn.shopify.com/s/files/1/1355/7899/products/XT7oCJ0N-Il-jZBYBddhZdqc0Ilhb7f0USo1_1InOq8.jpg?v=1673023717&width=3000"
 }
 ```
 
@@ -102,26 +106,35 @@ This endpoint accepts the following optional query string parameters:
 The results array should be sorted by price in ascending way.
 
 ```sh
-❯ curl -H "Accept: application/json" http://localhost:8092/products/search?limit=5&brand=loom&price=30
+❯ curl -H "Accept: application/json" http://localhost:8092/products/search?limit=10&brand=loom&price=30
 {
-  "limit": 5,
-  "total": 2,
+  "limit": 10,
+  "total": 5,
   "results": [
     {
-        "_id": "f9360699-2c7d-5cec-8529-374d3e166f87",
-        "link": "https://www.loom.fr/collections/hauts/products/le-t-shirt",
-        "brand": "loom",
-        "price": 20,
-        "name": "Le t-shirt en coton",
-        "photo":"//cdn.shopify.com/s/files/1/1355/7899/products/loom_tshirt_coton_gris_anthracite_face_2_394x.jpg?v=1611741180"
+      "_id": "244fa0aa-ba21-59b7-8f74-ba6fed993746",
+      "link": "https://www.loom.fr/collections/vestiaire-homme/products/le-t-shirt-homme",
+      "brand": "loom",
+      "price": 25,
+      "name": "Le t-shirt",
+      "photo":" //cdn.shopify.com/s/files/1/1355/7899/products/XT7oCJ0N-Il-jZBYBddhZdqc0Ilhb7f0USo1_1InOq8.jpg?v=1673023717&width=3000"
     },
     {
-        "_id": "8ad2f7ed-652f-57a9-b48e-659b8e4fa3d2",
-        "link": "https://www.loom.fr/collections/hauts/products/le-t-shirt-en-coton-bio",
-        "brand": "loom",
-        "price": 25},
-        "name": "Le t-shirt en coton bio",
-        "photo": "//cdn.shopify.com/s/files/1/1355/7899/products/tshirtloomcotonbioblancface2_394x.jpg?v=1611740926"
+      "_id": "1035e7a1-e4a3-55e0-9650-4594cf563a7f",
+      "link": "https://www.loom.fr/collections/vestiaire-homme/products/le-boxer",
+      "brand": "loom",
+      "price": 20,
+      "name": "Le boxer",
+      "photo": "//cdn.shopify.com/s/files/1/1355/7899/products/CaJ7HhFr1595H4N4QftXl3CJQgsAZXcd9flFpMhtFFQ.jpg?v=1672828469&width=3000",
+    },
+    {
+      ...
+    },
+    {
+      ...
+    },
+    {
+      ...
     }
   ]
 }

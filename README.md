@@ -33,14 +33,7 @@ With Clear Fashion, you will get an analysis **with transparency and independenc
 
 Clear Fashion is particularly committed to ensuring that there are **no conflicts due to commercial interests**.
 
-The problems as consumer are
-
-1. **I cannot open my favorite brands shop links**
-1. **I cannot consult on the same page all the products of my favorite brands**
-
-I have to search on google the e-shop link for all brands.
-
-![Google](./docs/google.jpg)
+My problem is simple and time-consuming: **I cannot consult on the same page all the products of my favorite brands.**
 
 I have to browse each e-shop brand to look for a product.
 
@@ -48,7 +41,7 @@ I have to browse each e-shop brand to look for a product.
 
 ## 🎯 Objective
 
-**Build a web application to list my favorite top responsible brands Products.**
+**Build a web application to list my favorite top responsible Brands Products.**
 
 ## 🛣 How to solve it?
 
@@ -69,14 +62,14 @@ With [javascript-empire](https://github.com/92bondstreet/javascript-empire#%EF%B
 
 | Step | Workshops | Planned Date
 | --- | --- | ---
-| 1 | [Manipulate data with JavaScript in the browser](./workshops/1-manipulate-javascript.md) | 17 January 2022
-| 2 | [Interact data with JavaScript, HTML and CSS in the browser again](./workshops/2-interact-js-css.md) | 24 January 2022
-| 3 | [Scrape data with Node.js](./workshops/3-scrape-node.md) | 31 January and 7 February 2022
-| 4 | [Save data in a Database with MongoDB](./workshops/4-store-mongodb.md) | 14 February 2022
-| 5 | [Build an api with Express to request data](./workshops/5-api-express.md) | 7 March 2022
-| 6 | Test your code with Jest | 14 March 2022
-| 7 | [Deploy in production with Vercel](./workshops/7-deploy.md) | 21 and 22 March 2022
-| 8 | Render data with React | April 2022 extra mile
+| 1 | [Manipulate data with JavaScript in the browser](./workshops/1-manipulate-javascript.md) | January 2023
+| 2 | [Interact data with JavaScript, HTML and CSS in the browser again](./workshops/2-interact-js-css.md) | January 2023
+| 3 | [Scrape data with Node.js](./workshops/3-scrape-node.md) | February 2023
+| 4 | [Save data in a Database with MongoDB](./workshops/4-store-mongodb.md) | February 2023
+| 5 | [Build an api with Express to request data](./workshops/5-api-express.md) | February 2023
+| 6 | Test your code with Jest | March 2023
+| 7 | [Deploy in production with Vercel](./workshops/7-deploy.md) | March 2023
+| 8 | Render data with React | March 2023
 
 
 ## 🌱 Source and Inspiration

@@ -1,9 +1,9 @@
 const parseDomain = require('parse-domain');
-const sources = require('require-all')(`${__dirname}/sources`);
+const eshops = require('require-all')(`${__dirname}/eshops`);
 
 module.exports = async link => {
-  const {'domain': source} = parseDomain(link);
-  const products = await sources[source].scrape(link);
+  const {'domain': eshop} = parseDomain(link);
+  const products = await eshops[eshop].scrape(link);
 
   return products;
 };

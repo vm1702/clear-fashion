@@ -46,19 +46,15 @@ How to choose environmentally & human-friendly clothes
 
 ---
 
-🔗 I cannot open my favorite brands shop links
-
----
-
 📱 I cannot consult on the same page **all the products** of my favorite brands
 
 ---
 
-![google](./google.jpg)
+![shops](./shops.jpg)
 
 ---
 
-![shops](./shops.jpg)
+Simple and Time-consuming
 
 ---
 
@@ -72,7 +68,7 @@ How to choose environmentally & human-friendly clothes
 
 Good Luck.
 
-📅 See you in 22th March.
+📅 See you end of March 2023.
 
 ---
 
