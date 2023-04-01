@@ -1,0 +1,104 @@
+body {
+    font-family: Times New Roman, sans-serif;
+    text-align: center;
+    background-color: #11355E;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  section {
+    display: inline-block;
+    margin: 0 20px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  #options {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #fff; 
+    color: #11355E; 
+  }
+  
+  #options div {
+    margin: 20px 0;
+  }
+  
+  #options label {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #11355E;
+  }
+  
+  #options select, #options input[type="checkbox"] {
+    margin-left: 10px;
+    padding: 5px;
+    border: 1px solid #11355E;
+    background-color: #f5f5f5;
+    font-size: 14px;
+  }
+  
+  #indicators {
+    border: 1px solid #11355E;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  #indicators h2 {
+    margin-bottom: 20px;
+    color: #11355E;
+  }
+  
+  #indicators div {
+    margin: 20px 0;
+  }
+  
+  #indicators span {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #11355E;
+  }
+
+  .product {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    color: #11355E;
+  }
+  
+  .product span {
+    font-size: 16px;
+    margin:  0 10px;
+    font-weight: bold;
+    margin-right: 10px;
+    color:#11355E;
+  }
+  
+  .product a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #11355E;
+  }
+  
+  .product button {
+    background-color: #11355E;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  
+  
