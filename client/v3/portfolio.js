@@ -3,320 +3,256 @@
 
 /*
 Description of the available api
-GET https://menuvictorapi.vercel.app/
+GET https://menuvictorapi-54tfv6c6o-victormenu-devincifr.vercel.app/
 Search for specific products
 This endpoint accepts the following optional query string parameters:
 - `page` - page of products to return
 - `size` - number of products to return
-GET https://menuvictorapi.vercel.app/brands
+GET https://menuvictorapi-54tfv6c6o-victormenu-devincifr.vercel.app/brands
 Search for available brands list
 */
 
 let currentProducts = [];
-let currentPagination = {};
-let brandsCount = 0;
-let recentProducts = 0;
-let lastRelease = NaN;
-let p50 = 0;
-let p90 = 0;
-let p95 = 0;
+let show = 12;
+let page = 1;
+let brand = 'All';
+let price = 'All';
+let sort = 'Cheapest';
+let favorite_products = [];
+const current_date = Date.now();
 
 const selectShow = document.querySelector('#show-select');
 const selectPage = document.querySelector('#page-select');
-const sectionProducts = document.querySelector('#products');
+const selectBrand = document.querySelector('#brand-select');
+const selectPrice = document.querySelector('#price-select');
+const selectSort = document.querySelector('#sort-select');
 const spanNbProducts = document.querySelector('#nbProducts');
-const brandSelect = document.querySelector('#brand-select');
-const sortSelect = document.querySelector('#sort-select');
-const showOnlySelectSale = document.querySelector('#showOnly-select-sale');
-const showOnlySelectNew = document.querySelector('#showOnly-select-new');
-const showOnlySelectFavorite = document.querySelector('#showOnly-select-favorite');
-const productDiv = document.querySelectorAll(".product");
+const spanNbBrands = document.querySelector('#nbBrands');
+const spanPercentile50 = document.querySelector('#percentile50');
+const spanPercentile90 = document.querySelector('#percentile90');
+const spanPercentile95 = document.querySelector('#percentile95');
+const spanNbSearchProducts = document.querySelector('#nbSearchProducts');
+const sectionSearchProducts = document.querySelector('#searchProducts');
+const spanNbFavoriteProducts = document.querySelector('#nbFavoriteProducts');
+const sectionFavoriteProducts = document.querySelector('#favoriteProducts');
 
-/**
- * Set global value
- * @param {Array} result - products to display
- * @param {Object} meta - pagination meta info
- */
-
-const setCurrentProducts = ({result, meta}) => {
-  currentProducts = result;
-  currentPagination = meta;
-};
-
-/**
- * Fetch products from api
- * @param  {Number}  [page=1] - current page to fetch
- * @param  {Number}  [size=12] - size of the page
- * @return {Object}
- */
-const fetchProducts = async (page =1, size =12, brand ="all", sortBy ="price-asc", filter =[false, false, false]) => {
+const fetchProducts = async (show=12, page=1, brand="",price="") => {
   try {
-    const response = await fetch(`https://menuvictorapi.vercel.app?size=999` + (brand !=="all" ? `&brand=${brand}`:""));
+    let url = `https://menuvictorapi-54tfv6c6o-victormenu-devincifr.vercel.app/search?brand=${brand}&price=${price}`;
+    console.log(url);
+    const response = await fetch(url);
     const body = await response.json();
-    if (body.success !==true) {
-      console.error(body);
-      return {currentProducts, currentPagination};
-    }
-    var result = body.data.result;
 
-    
-    if(filter[0]) {
-      result = result.filter(product => product.price<50);
-    }
-    if(filter[1]) {
-      result = result.filter(product => (new Date()-new Date(product.released))/(86400000)<14);
-    }
-    if(filter[2]) {
-      result = result.filter(product => (JSON.parse(localStorage.getItem("favorites")) || []).includes(product.uuid));
-    };
-
-    var meta = {
-      currentPage: page,
-      pageCount: Math.ceil(result.length/size),
-      pageSize: size,
-      count: result.length
-    };
-
-    if(sortBy === "price-asc") {
-      result.sort((a, b) => a.price-b.price);
-    }
-    else if(sortBy === "price-desc") {
-      result.sort((a, b) => b.price-a.price);
-    }
-    else if(sortBy === "date-asc") {
-      result.sort((a, b) => new Date(b.released)-new Date(a.released));
-    }
-    else if(sortBy === "date-desc") {
-      result.sort((a, b) => new Date(a.released)-new Date(b.released));
-    }
-
-    brandsCount =0
-    if(result.length>0){
-      result.reduce((acc, product) => {
-        if(!acc[product.brand]) {
-          acc[product.brand] =1;
-          brandsCount++;
-        }
-        return acc;
-      }, {});
-    };
-
-    recentProducts = result.filter(product => (new Date()-new Date(product.released))/(86400000)<14).length;
-    lastRelease = result.length>0 ? result.reduce(function(a,b) {
-      return new Date(a.released) > new Date(b.released) ? a : b;
-    }).released : "Nan";
-
-    if(result.length > 0)
-    {
-      p50 = [...result].sort((a, b) => a.price-b.price)[Math.floor(result.length/2)].price;
-      p90 = [...result].sort((a, b) => a.price-b.price)[Math.floor(result.length*0.9)].price;
-      p95 = [...result].sort((a, b) => a.price-b.price)[Math.floor(result.length*0.95)].price;
-    }
-    else
-    {
-      p50 =0;
-      p90 =0;
-      p95 =0;
-    }
-
-    var result = result.slice((page-1)*size, page*size);
-    return {result, meta};
-    
+    const currentPage = body.currentPage;
+    const totalPages = body.totalPages;
+    spanNbSearchProducts.innerHTML = body.totalCount + ' products found';
+    const options = Array.from(
+        {'length': totalPages},
+        (value, index) => `<option value="${index + 1}">${index + 1}</option>`
+    ).join('');
+    selectPage.innerHTML = options;
+    selectPage.selectedIndex = currentPage - 1;
+    return body.data;
   } catch (error) {
     console.error(error);
-    return {currentProducts, currentPagination};
+    return currentProducts;
   }
 };
 
-/**
- * Render list of products
- * @param  {Array} products
- */
-const renderProducts = products => {
-  const fragment = document.createDocumentFragment();
-  const div = document.createElement('div');
-  let i =-1;
-  const template = products
-    .map(product => {
-      i++;
-      return `
-      <div class="product" id=${product.uuid}>
-        <span>${product.brand}</span>
-        <a href="${product.link}" target="_blank">${product.name}</a>
-        <span>${product.price} </span><span id="${product.uuid}-fav">`
-      + ((JSON.parse(localStorage.getItem("favorites")) || []).includes(product.uuid) ? `<3 <button onclick=deleteToFavorite("` + product.uuid + `")>Delete from favorite</button>` : `<button onclick=addToFavorite(currentProducts[${i}].uuid)>Add to favorite</button>`) + `
-      </span></div>
-    `;
-    })
-    .join('');
-
-  div.innerHTML = template;
-  fragment.appendChild(div);
-  sectionProducts.innerHTML = '<h2>Products</h2>';
-  sectionProducts.appendChild(fragment);
-};
-
-/**
- * Render page selector
- * @param  {Object} pagination
- */
-const renderPagination = pagination => {
-  const {currentPage, pageCount} = pagination;
-  const options = Array.from(
-    {'length': pageCount},
-    (value, index) => `<option value="${index+1}">${index+1}</option>`
-  ).join('');
-
-  selectPage.innerHTML = options;
-  selectPage.selectedIndex = currentPage -1;
-};
-
-/**
- * Render page selector
- * @param  {Object} pagination
- */
-const renderIndicators = pagination => {
-  const {count} = pagination;
-
-  spanNbProducts.innerHTML = count;
-};
-
-
-const renderBrands = brands => {
-  const options = brands
-    .map(brand => `<option value="${brand}">${brand}</option>`)
-    .join('');
-
-  brandSelect.innerHTML = options;
-};
-
-const renderBrandsCount = () => {
-  const spanNbBrands = document.querySelector('#nbBrands');
-  spanNbBrands.innerHTML = brandsCount;
-};
-
-const renderRecentProducts = () => {
-  const spanNbRecentProducts = document.querySelector('#nbRecentProducts');
-  spanNbRecentProducts.innerHTML = recentProducts;
-};
-
-const renderLastRelease = () => {
-  const spanLastReleased = document.querySelector('#spanLastReleased');
-  spanLastReleased.innerHTML = lastRelease;
-};
-
-const renderStats = () => {
-  const spanP50 = document.querySelector('#spanP50');
-  spanP50.innerHTML = p50;
-  const spanP90 = document.querySelector('#spanP90');
-  spanP90.innerHTML = p90;
-  const spanP95 = document.querySelector('#spanP95');
-  spanP95.innerHTML = p95;
-};
-
-const render = (products, pagination) => {
-  renderProducts(products);
-  renderPagination(pagination);
-  renderIndicators(pagination);
-  renderBrandsCount();
-  renderRecentProducts();
-  renderLastRelease();
-  renderStats();
-};
-
-async function fetchBrands() {
+const fetchAllProducts = async () => {
   try {
     const response = await fetch(
-      'https://menuvictorapi.vercel.app/brands'
+        'https://menuvictorapi-54tfv6c6o-victormenu-devincifr.vercel.app/products'
     );
     const body = await response.json();
-
-    if (body.success !== true) {
-      console.error(error);
-    }
-    else {
-      var brands = body.data.result;
-      brands.unshift("all");
-      renderBrands(brands);
-    }
+    return body;
   } catch (error) {
     console.error(error);
+    return currentProducts;
   }
+};
+
+const fetchBrands = async () => {
+  try {
+    const response = await fetch(
+        'https://menuvictorapi-54tfv6c6o-victormenu-devincifr.vercel.app/brands'
+    );
+    const body = await response.json();
+    return body;
+  } catch (error) {
+    console.error(error);
+    return currentProducts;
+  }
+};
+
+const fetchSortProducts = async (sort=-1) => {
+  try {
+    const response = await fetch(
+        `https://menuvictorapi-54tfv6c6o-victormenu-devincifr.vercel.app/sort?sort=${sort}`
+    );
+    const body = await response.json();
+    return body;
+  } catch (error) {
+    console.error(error);
+    return currentProducts;
+  }
+};
+
+async function changeFavorite(id) {
+  if (favorite_products.find(element => element._id === id)) {
+    favorite_products = favorite_products.filter(item => item._id !== id);
+  }
+  else {
+    favorite_products.push(currentProducts.find(element => element._id === id));
+  }
+  document.getElementById(id).getElementsByTagName('button')[0].innerText = textFavorite(id);
+  renderFavoriteProducts();
 }
 
-function addToFavorite(product) {
-  var favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-  favorites.push(product);
-  localStorage.setItem("favorites", JSON.stringify(favorites));
-  document.getElementById(product + "-fav").innerHTML = `<3 <button onclick=deleteToFavorite("`+product+`")>Delete from favorite</button>`;
+function textFavorite(id) {
+  let text = "";
+  if (favorite_products.find(element => element._id === id)) {
+    text = "💔 Delete from favorite";
+  }
+  else {
+    text = "❤️ Add to favorite";
+  }
+  return text;
 }
 
-async function deleteToFavorite(product) {
-  var favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-  favorites = favorites.filter(favorite => favorite != product);
-  localStorage.setItem("favorites", JSON.stringify(favorites));
-  document.getElementById(product + "-fav").innerHTML = `<button onclick=addToFavorite("`+product+`")>Add to favorite</button>`;
-  if(showOnlySelectFavorite.checked){
-    const products = await fetchProducts(1, currentPagination.pageSize, brandSelect.value, sortSelect.value, [showOnlySelectSale.checked, showOnlySelectNew.checked, showOnlySelectFavorite.checked]);
-    setCurrentProducts(products);
-    render(currentProducts, currentPagination);
-  }
-}
+const renderSearchProducts = products => {
+  currentProducts = products;
+  const template = products
+      .map(product => {
+        return `
+      <div class="product" id=${product._id}>
+        <span>${product.brand}</span>
+        <a href="${product.link}" target="_blank">${product.name}</a>
+        <span>${product.price}€</span>
+        <span>${product.caracteristique}</span>
+        <button onclick="changeFavorite('${product._id}')">${textFavorite(product._id)}</button>
+      </div>
+    `;
+      })
+      .join('');
+
+  sectionSearchProducts.innerHTML = template;
+};
+
+const renderFavoriteProducts = products => {
+  const template = favorite_products
+      .map(product => {
+        return `
+      <div class="product" id=${product._id}>
+        <span>${product.brand}</span>
+        <a href="${product.link}" target="_blank">${product.name}</a>
+        <span>${product.price}€</span>
+        <span>${product.caracteristique}</span>
+        <button onclick="changeFavorite('${product._id}')">${textFavorite(product._id)}</button>
+      </div>
+    `;
+      })
+      .join('');
+
+  spanNbFavoriteProducts.innerHTML = favorite_products.length + (favorite_products.length > 1 ? ' favorite products' : ' favorite product');
+  sectionFavoriteProducts.innerHTML = template;
+};
 
 selectShow.addEventListener('change', async (event) => {
-  const products = await fetchProducts(1, parseInt(event.target.value), brandSelect.value, sortSelect.value, [showOnlySelectSale.checked, showOnlySelectNew.checked, showOnlySelectFavorite.checked]);
-
-  setCurrentProducts(products);
-  render(currentProducts, currentPagination);
+  show = event.target.value;
+  page = 1;
+  let products = await fetchProducts(show=show, page=1, brand="", price="")
+  renderSearchProducts(products);
 });
 
 selectPage.addEventListener('change', async (event) => {
-  const products = await fetchProducts(parseInt(event.target.value), currentPagination.pageSize, brandSelect.value, sortSelect.value, [showOnlySelectSale.checked, showOnlySelectNew.checked, showOnlySelectFavorite.checked]);
-
-  setCurrentProducts(products);
-  render(currentProducts, currentPagination);
+  page = event.target.value;
+  let products = await fetchProducts(show=12, page=page, brand="", price="")
+  renderSearchProducts(products);
 });
 
-brandSelect.addEventListener('change', async (event) => {
-  const products = await fetchProducts(1, currentPagination.pageSize, event.target.value, sortSelect.value, [showOnlySelectSale.checked, showOnlySelectNew.checked, showOnlySelectFavorite.checked]);
-
-  setCurrentProducts(products);
-  render(currentProducts, currentPagination);
+selectBrand.addEventListener('change', async (event) => {
+  brand = event.target.value;
+  if(brand=='All'){
+    brand="";
+  }
+  page = 1;
+  let products = await fetchProducts(show=show, page=page, brand=brand, price="")
+  renderSearchProducts(products);
 });
 
-sortSelect.addEventListener('change', async (event) => {
-  const products = await fetchProducts(1, currentPagination.pageSize, brandSelect.value, event.target.value, [showOnlySelectSale.checked, showOnlySelectNew.checked, showOnlySelectFavorite.checked]);
-
-  setCurrentProducts(products);
-  render(currentProducts, currentPagination);
+selectPrice.addEventListener('change', async (event) => {
+  price = event.target.value;
+  if(price=='All'){
+    price="";
+  }
+  page = 1;
+  let products = await fetchProducts(show=show, page=page, brand="", price=price)
+  renderSearchProducts(products);
 });
 
-showOnlySelectFavorite.addEventListener('change', async (event) => {
-  const products = await fetchProducts(1, currentPagination.pageSize, brandSelect.value, sortSelect.value, [showOnlySelectSale.checked, showOnlySelectNew.checked, event.target.checked]);
+selectSort.addEventListener('change', async (event) => {
+  sort = event.target.value;
+  page = 1;
+  let products = await fetchSortProducts();
 
-  setCurrentProducts(products);
-  render(currentProducts, currentPagination);
+  let listeOfPdts=[];
+
+  if(sort!='Default'){
+
+    if(sort=='Cheapest'){
+      listeOfPdts = await fetchSortProducts(1);
+    }
+    else if(sort=='Most expensive'){
+      listeOfPdts = await fetchSortProducts(-1);
+    }
+
+  }
+  else{
+    listeOfPdts = products
+  }
+
+  products=listeOfPdts;
+
+  renderSearchProducts(products);
 });
 
-showOnlySelectSale.addEventListener('change', async (event) => {
-  const products = await fetchProducts(1, currentPagination.pageSize, brandSelect.value, sortSelect.value, [event.target.checked, showOnlySelectNew.checked, showOnlySelectFavorite.checked]);
 
-  setCurrentProducts(products);
-  render(currentProducts, currentPagination);
-});
-
-showOnlySelectNew.addEventListener('change', async (event) => {
-  const products = await fetchProducts(1, currentPagination.pageSize, brandSelect.value, sortSelect.value, [showOnlySelectSale.checked, event.target.checked, showOnlySelectFavorite.checked]);
-
-  setCurrentProducts(products);
-  render(currentProducts, currentPagination);
-});
+const quantile = (arr, q) => {
+  const sorted = arr.sort((a, b) => a - b);
+  const pos = (sorted.length - 1) * q;
+  const base = Math.floor(pos);
+  const rest = pos - base;
+  if (sorted[base + 1] !== undefined) {
+    return sorted[base] + rest * (sorted[base + 1] - sorted[base]);
+  } else {
+    return sorted[base];
+  }
+};
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const products = await fetchProducts();
+  const brand_names = await fetchBrands();
+  spanNbBrands.innerHTML = brand_names.length;
 
-  setCurrentProducts(products);
-  render(currentProducts, currentPagination);
+  brand_names.unshift("All");
+  const brands = Array.from(
+      brand_names,
+      value => <option value="${value}">${value}</option>
+  ).join('');
+
+  selectBrand.innerHTML = brands;
+
+  let products = await fetchProducts();
+  renderSearchProducts(products);
+
+  const all_products = await fetchAllProducts();
+  spanNbProducts.innerHTML = all_products.length;
+
+  let prices = [];
+  for (let product_id in all_products) {
+    prices.push(all_products[product_id].price);
+  }
+  spanPercentile50.innerHTML = Math.round(quantile(prices, 0.50));
+  spanPercentile90.innerHTML = Math.round(quantile(prices, 0.90));
+  spanPercentile95.innerHTML = Math.round(quantile(prices, 0.95));
 });
-
-fetchBrands();
