@@ -26,8 +26,6 @@ app.listen(PORT);
 console.log(`📡 Running on port ${PORT}`);
 
 
-
-
 app.get('/products/:id', async (req, res) => {
   const productId = req.params.id;
   const client = await MongoClient.connect(MONGODB_URI, {
@@ -51,61 +49,84 @@ app.get('/products/:id', async (req, res) => {
   }
 });
 
-
 app.get('/products/search', async (request, response) => {
+  const client = await MongoClient.connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+  const db = client.db(MONGODB_DB_NAME);
+  const collection = db.collection('products');
+
   try {
-
-    const client = await MongoClient.connect(MONGODB_URI, {'useNewUrlParser': true});
-    const db = client.db(MONGODB_DB_NAME);
-
-    const collection = db.collection('products');
-
     let limit = request.query.limit || undefined;
     let brand = request.query.brand || undefined;
     let price = request.query.price || undefined;
     let query = {};
 
-    if(limit !== undefined) {
+    if (limit !== undefined) {
       query.limit = limit;
     }
-    if(brand !== undefined) {
+    if (brand !== undefined) {
       query.brand = brand;
     }
-    if(price !== undefined) {
-      query.price = {$lte: parseInt(price)};
+    if (price !== undefined) {
+      query.price = { $lte: parseInt(price) };
     }
 
     let prods = await collection
-        .find(query)
-        .limit(parseInt(limit))
-        .sort({price: 1})
-        .toArray();
+      .find(query)
+      .limit(parseInt(limit))
+      .sort({ price: 1 })
+      .toArray();
 
-    response.send({result: prods});
-
-  } catch(e) {
-    response.send({error: "Error : Incorrect arguments"});
-    console.log(e);
+    response.json({ result: prods });
+  } catch (error) {
+    console.error(error);
+    response.status(500).json({ error: 'Internal server error' });
+  } finally {
+    await client.close();
   }
-
 });
 
 app.get('/products', async (req, res) => {
-  const client = await MongoClient.connect(MONGODB_URI, {'useNewUrlParser': true});
+  const client = await MongoClient.connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
   const db = client.db(MONGODB_DB_NAME);
   const collection = db.collection('products');
 
-  const result = await collection.find({}).toArray();
-
-  res.json(result);
+  try {
+    const result = await collection.find({}).toArray();
+    res.json(result);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  } finally {
+    await client.close();
+  }
 });
 
 app.get('/brands', async (req, res) => {
-  const client = await MongoClient.connect(MONGODB_URI, {'useNewUrlParser': true});
+  const client = await MongoClient.connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
   const db = client.db(MONGODB_DB_NAME);
   const collection = db.collection('products');
 
-  const result = await collection.distinct('brand');
-
-  res.json(result);
+  try {
+    const result = await collection.distinct('brand');
+    res.json(result);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  } finally {
+    await client.close();
+  }
 });
+
+
+
+
+

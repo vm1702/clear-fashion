@@ -8,7 +8,7 @@ Search for specific products
 This endpoint accepts the following optional query string parameters:
 - `page` - page of products to return
 - `size` - number of products to return
-GET https://menuvictorapi.vercel.app/brands.json
+GET https://menuvictorapi.vercel.app/brands
 Search for available brands list
 */
 
