@@ -26,6 +26,8 @@ app.listen(PORT);
 console.log(`📡 Running on port ${PORT}`);
 
 
+
+
 app.get('/products/:id', async (req, res) => {
   const productId = req.params.id;
   const client = await MongoClient.connect(MONGODB_URI, {
@@ -86,4 +88,24 @@ app.get('/products/search', async (request, response) => {
     console.log(e);
   }
 
+});
+
+app.get('/products', async (req, res) => {
+  const client = await MongoClient.connect(MONGODB_URI, {'useNewUrlParser': true});
+  const db = client.db(MONGODB_DB_NAME);
+  const collection = db.collection('products');
+
+  const result = await collection.find({}).toArray();
+
+  res.json(result);
+});
+
+app.get('/brands', async (req, res) => {
+  const client = await MongoClient.connect(MONGODB_URI, {'useNewUrlParser': true});
+  const db = client.db(MONGODB_DB_NAME);
+  const collection = db.collection('products');
+
+  const result = await collection.distinct('brand');
+
+  res.json(result);
 });
