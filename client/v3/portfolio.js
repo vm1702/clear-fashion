@@ -3,12 +3,12 @@
 
 /*
 Description of the available api
-GET https://menuvictorapi-54tfv6c6o-victormenu-devincifr.vercel.app/
+GET https://menuvictorapi-464afckjj-victormenu-devincifr.vercel.app/
 Search for specific products
 This endpoint accepts the following optional query string parameters:
 - `page` - page of products to return
 - `size` - number of products to return
-GET https://menuvictorapi-54tfv6c6o-victormenu-devincifr.vercel.app/brands
+GET https://menuvictorapi-464afckjj-victormenu-devincifr.vercel.app/brands
 Search for available brands list
 */
 
@@ -38,7 +38,7 @@ const sectionFavoriteProducts = document.querySelector('#favoriteProducts');
 
 const fetchProducts = async (show=12, page=1, brand="",price="") => {
   try {
-    let url = `https://menuvictorapi-54tfv6c6o-victormenu-devincifr.vercel.app/search?brand=${brand}&price=${price}`;
+    let url = `https://menuvictorapi-464afckjj-victormenu-devincifr.vercel.app/products/search?limit=12&brand=${brand}&price=${price}`;
     console.log(url);
     const response = await fetch(url);
     const body = await response.json();
@@ -62,7 +62,7 @@ const fetchProducts = async (show=12, page=1, brand="",price="") => {
 const fetchAllProducts = async () => {
   try {
     const response = await fetch(
-        'https://menuvictorapi-54tfv6c6o-victormenu-devincifr.vercel.app/products'
+        'https://menuvictorapi-464afckjj-victormenu-devincifr.vercel.app/products'
     );
     const body = await response.json();
     return body;
@@ -75,7 +75,7 @@ const fetchAllProducts = async () => {
 const fetchBrands = async () => {
   try {
     const response = await fetch(
-        'https://menuvictorapi-54tfv6c6o-victormenu-devincifr.vercel.app/brands'
+        'https://menuvictorapi-464afckjj-victormenu-devincifr.vercel.app/brands'
     );
     const body = await response.json();
     return body;
@@ -88,7 +88,7 @@ const fetchBrands = async () => {
 const fetchSortProducts = async (sort=-1) => {
   try {
     const response = await fetch(
-        `https://menuvictorapi-54tfv6c6o-victormenu-devincifr.vercel.app/sort?sort=${sort}`
+        `https://menuvictorapi-464afckjj-victormenu-devincifr.vercel.app/sort?sort=${sort}`
     );
     const body = await response.json();
     return body;
@@ -112,10 +112,10 @@ async function changeFavorite(id) {
 function textFavorite(id) {
   let text = "";
   if (favorite_products.find(element => element._id === id)) {
-    text = "💔 Delete from favorite";
+    text = "Delete from favorite";
   }
   else {
-    text = "❤️ Add to favorite";
+    text = "Add to favorite";
   }
   return text;
 }

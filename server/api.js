@@ -49,40 +49,36 @@ app.get('/products/:id', async (req, res) => {
   }
 });
 
-app.get('/products/search', async (request, response) => {
+app.get('/products/search', async (req, res, next) => {
+  const { limit = 12, brand = null, price = null } = req.query;
+  const query = {};
+
+  if (brand) {
+    query.brand = brand;
+  }
+
+  if (price) {
+    query.price = { $lte: Number(price) };
+  }
+
   const client = await MongoClient.connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
   const db = client.db(MONGODB_DB_NAME);
-  const collection = db.collection('products');
 
   try {
-    let limit = request.query.limit || undefined;
-    let brand = request.query.brand || undefined;
-    let price = request.query.price || undefined;
-    let query = {};
+    const collection = db.collection('products');
+    const products = await collection
+        .find(query)
+        .limit(Number(limit))
+        .sort({ price: 1 })
+        .toArray();
 
-    if (limit !== undefined) {
-      query.limit = limit;
-    }
-    if (brand !== undefined) {
-      query.brand = brand;
-    }
-    if (price !== undefined) {
-      query.price = { $lte: parseInt(price) };
-    }
-
-    let prods = await collection
-      .find(query)
-      .limit(parseInt(limit))
-      .sort({ price: 1 })
-      .toArray();
-
-    response.json({ result: prods });
+    res.json(products);
   } catch (error) {
     console.error(error);
-    response.status(500).json({ error: 'Internal server error' });
+    res.status(500).json({ error: 'Internal server error' });
   } finally {
     await client.close();
   }
