@@ -1,26 +1,6 @@
 // Invoking strict mode https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode#invoking_strict_mode
 'use strict';
 
-/*
-Description of the available api
-GET https://menuvictorapi-464afckjj-victormenu-devincifr.vercel.app/
-Search for specific products
-This endpoint accepts the following optional query string parameters:
-- `page` - page of products to return
-- `size` - number of products to return
-GET https://menuvictorapi-464afckjj-victormenu-devincifr.vercel.app/brands
-Search for available brands list
-*/
-
-let currentProducts = [];
-let show = 12;
-let page = 1;
-let brand = 'All';
-let price = 'All';
-let sort = 'Cheapest';
-let favorite_products = [];
-const current_date = Date.now();
-
 const selectShow = document.querySelector('#show-select');
 const selectPage = document.querySelector('#page-select');
 const selectBrand = document.querySelector('#brand-select');
@@ -36,9 +16,22 @@ const sectionSearchProducts = document.querySelector('#searchProducts');
 const spanNbFavoriteProducts = document.querySelector('#nbFavoriteProducts');
 const sectionFavoriteProducts = document.querySelector('#favoriteProducts');
 
+let currentProducts = [];
+let show = 12;
+let page = 1;
+let brand = 'All';
+let price = 'All';
+let sort = 'Cheapest';
+let favorite_products = [];
+
+/**
+ * Fetch API
+ */
+
 const fetchProducts = async (show=12, page=1, brand="",price="") => {
   try {
-    let url = `https://menuvictorapi-464afckjj-victormenu-devincifr.vercel.app/products/search?limit=12&brand=${brand}&price=${price}`;
+    let url = `https://menuvictorapi-fwd1ss1w6-victormenu-devincifr.vercel.app/search?brand=${brand}&price=${price}`;
+    
     console.log(url);
     const response = await fetch(url);
     const body = await response.json();
@@ -62,7 +55,8 @@ const fetchProducts = async (show=12, page=1, brand="",price="") => {
 const fetchAllProducts = async () => {
   try {
     const response = await fetch(
-        'https://menuvictorapi-464afckjj-victormenu-devincifr.vercel.app/products'
+        'https://menuvictorapi-fwd1ss1w6-victormenu-devincifr.vercel.app/products'
+      
     );
     const body = await response.json();
     return body;
@@ -75,7 +69,8 @@ const fetchAllProducts = async () => {
 const fetchBrands = async () => {
   try {
     const response = await fetch(
-        'https://menuvictorapi-464afckjj-victormenu-devincifr.vercel.app/brands'
+        'https://menuvictorapi-fwd1ss1w6-victormenu-devincifr.vercel.app/brands'
+
     );
     const body = await response.json();
     return body;
@@ -88,7 +83,8 @@ const fetchBrands = async () => {
 const fetchSortProducts = async (sort=-1) => {
   try {
     const response = await fetch(
-        `https://menuvictorapi-464afckjj-victormenu-devincifr.vercel.app/sort?sort=${sort}`
+        `https://menuvictorapi-fwd1ss1w6-victormenu-devincifr.vercel.app/sort?sort=${sort}`
+     
     );
     const body = await response.json();
     return body;
@@ -97,6 +93,10 @@ const fetchSortProducts = async (sort=-1) => {
     return currentProducts;
   }
 };
+
+/**
+ * Favorite products
+ */
 
 async function changeFavorite(id) {
   if (favorite_products.find(element => element._id === id)) {
@@ -112,13 +112,17 @@ async function changeFavorite(id) {
 function textFavorite(id) {
   let text = "";
   if (favorite_products.find(element => element._id === id)) {
-    text = "Delete from favorite";
+    text = "Delete favorite :(";
   }
   else {
-    text = "Add to favorite";
+    text = "Add favorite <3";
   }
   return text;
 }
+
+/**
+ * Render list of products
+ */
 
 const renderSearchProducts = products => {
   currentProducts = products;
@@ -126,6 +130,7 @@ const renderSearchProducts = products => {
       .map(product => {
         return `
       <div class="product" id=${product._id}>
+        <img src="${product.photo}" style="width: 100px; height: 125px;">
         <span>${product.brand}</span>
         <a href="${product.link}" target="_blank">${product.name}</a>
         <span>${product.price}€</span>
@@ -144,6 +149,7 @@ const renderFavoriteProducts = products => {
       .map(product => {
         return `
       <div class="product" id=${product._id}>
+        <img src="${product.photo}" style="width: 100px; height: 125px;">
         <span>${product.brand}</span>
         <a href="${product.link}" target="_blank">${product.name}</a>
         <span>${product.price}€</span>
@@ -157,6 +163,10 @@ const renderFavoriteProducts = products => {
   spanNbFavoriteProducts.innerHTML = favorite_products.length + (favorite_products.length > 1 ? ' favorite products' : ' favorite product');
   sectionFavoriteProducts.innerHTML = template;
 };
+
+/**
+ * Declaration of all Listeners
+ */
 
 selectShow.addEventListener('change', async (event) => {
   show = event.target.value;
@@ -217,6 +227,9 @@ selectSort.addEventListener('change', async (event) => {
   renderSearchProducts(products);
 });
 
+/**
+ * Launched on page load
+ */
 
 const quantile = (arr, q) => {
   const sorted = arr.sort((a, b) => a - b);
@@ -237,7 +250,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   brand_names.unshift("All");
   const brands = Array.from(
       brand_names,
-      value => <option value="${value}">${value}</option>
+      value => `<option value="${value}">${value}</option>`
   ).join('');
 
   selectBrand.innerHTML = brands;
@@ -248,7 +261,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   const all_products = await fetchAllProducts();
   spanNbProducts.innerHTML = all_products.length;
 
+
   let prices = [];
+
   for (let product_id in all_products) {
     prices.push(all_products[product_id].price);
   }
